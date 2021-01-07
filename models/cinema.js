@@ -16,9 +16,16 @@ Cinema.prototype.findFilmByTitle = function(filmsList, title) {
     return result;
 };
 
-Cinema.prototype.filterFilmsByGenre = function(filmsList, genre) {
+// Cinema.prototype.filterFilmsByGenre = function(filmsList, genre) {
+//     const result = filmsList.filter((film) => {
+//         return (film.genre === genre);
+//     });
+//     return result;
+// };
+
+Cinema.prototype.filmsByProperty = function(filmsList, property) {
     const result = filmsList.filter((film) => {
-        return (film.genre === genre);
+        return (film.property === property);
     });
     return result;
 };
@@ -34,6 +41,13 @@ Cinema.prototype.checkFilmLength = function(filmsList, length) {
     const result = filmsList.every((film) => {
         return (film.length > length);
     });
+    return result;
+};
+
+Cinema.prototype.totalRunTime = function(filmsList) {
+    const result = filmsList.reduce((runningTotal, film) => {
+        return runningTotal + film.length;
+    }, 0);
     return result;
 };
 
