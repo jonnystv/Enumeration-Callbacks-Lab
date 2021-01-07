@@ -36,7 +36,7 @@ describe('Cinema', function() {
 
 
     it('should be able to find a film by title', function() {
-        const actual = cinema.findFilmByTitle(cinema.films);
+        const actual = cinema.findFilmByTitle(cinema.films, 'Dunkirk');
         assert.deepStrictEqual(actual, [dunkirk]);
     });
 
